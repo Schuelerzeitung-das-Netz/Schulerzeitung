@@ -28,43 +28,8 @@ get_header();
 				
 				<?php
 													 
-				 if (strpos($_SERVER['REQUEST_URI'], "/autoren") === 0) {
-					echo "<h1>Autoren</h1>";
-					
-					 //TODO hide autors without posts
-					 
-					$tags = get_tags(array(
-  				'hide_empty' => true,
-				'orderby' => 'count',
-				'order' => 'DESC'
-				));
-				
-					
-			foreach ($tags as $tag) {
-				
-				$tag_link = get_tag_link( $tag->term_id );
-				
-			  echo nl2br("<article class=\"d-md-flex mg-posts-sec-post\">" .  "<span style=\"display:block;margin-left: 12px;\" class=\"autorenlist\"><a class=\"entry-title title\" href=\"" . $tag_link ."\">" . $tag->name . "</a>");
-				?>
-				
-				
-				
-				<?php
-			  echo ("<div style=\"position: absolute;right: 50px;display: inline-block;\">Beiträge: ".$tag->count."</div> " . tag_description($tag)  ." ". " ");
-			  
-			  
-			  echo ("</span>"." </article>");
-				
-			}
-			
-					
-					
-  				
-					
-					
-				}else{
 					 the_content(); 
-				}
+				
 					
 					?>
 				
